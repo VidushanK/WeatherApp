@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #777575;
+}
+
+.forecast-box {
+    align-self: center;
+    width: 100%;
+    max-width: 400px;
+    height: 90vh;
+    margin-top: 550px;
+}
+
+.city-name {
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.country {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+}
+
+.temperature {
+    margin-top: 15px;
+    font-weight: 100;
+    letter-spacing: -0.3rem;
+    font-size: 5rem;
+}

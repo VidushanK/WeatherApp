@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      city: 'Loading...',
+      country: 'Loading...',
+      currentWeather: 'Loading...',
+      currentTemperature: 0,
+      currentUnit: 'C',
+      availableUnit: 'F'
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className="main-wrapper overlay">
+        <div className="forecast-box">
+          <h1 className="city-name">{this.state.city}</h1>
+          <h2 className="country">{this.state.country}</h2>
+          <h3 className="temperature">{this.state.currentTemperature} &#176;{this.state.currentUnit} <span className="super-small">/ {this.state.availableUnit}</span></h3>
+          <h2>{this.state.currentWeather}</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
