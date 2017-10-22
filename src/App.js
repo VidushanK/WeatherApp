@@ -5,7 +5,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      country: '',
+      country: 'Waiting for User input..',
       data: {},
       currentTemperature: 0,
       currentUnit: 'C',
@@ -58,7 +58,7 @@ class App extends Component {
           <h1 className="banner">Weather App</h1>
             <form onSubmit={this.fetchUserLocation.bind(this)}>
               <input
-              placeholder="Enter City,Country"
+              placeholder="Enter Your City"
               className="textbar"
               type="text"
               onChange={this.userInput.bind(this)}
