@@ -8,7 +8,11 @@ html {
     color: #fff;
     text-align: center;
 }
-
+.textbar {
+    margin-top: 5px;
+    height: 35px;
+    width: 155px;
+}
 .main-wrapper {
     display: flex;
     justify-content: center;
@@ -17,19 +21,21 @@ html {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #777575;
+    background: #757575;
 }
 
 .forecast-box {
+    padding-top: 95px;
+    background: darkgray;
     align-self: center;
-    width: 100%;
-    max-width: 400px;
-    height: 90vh;
-    margin-top: 550px;
+    width: 700px;
+    height: 35vh;
+    border-radius: 50px;
+    border: solid black;
 }
 
 .city-name {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 700;
 }
 
