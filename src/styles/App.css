@@ -1,7 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 html {
     font-family: Helvetica, Arial, sans-serif;
@@ -12,6 +12,11 @@ html {
     margin-top: 5px;
     height: 35px;
     width: 155px;
+}
+.banner{
+  font-size: 50px;
+  top: 0px;
+  /*padding-bottom: 50px;*/
 }
 .main-wrapper {
     display: flex;
@@ -25,7 +30,7 @@ html {
 }
 
 .forecast-box {
-    padding-top: 95px;
+    padding-top: 65px;
     background: darkgray;
     align-self: center;
     width: 700px;
@@ -41,12 +46,12 @@ html {
 
 .country {
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+        margin-top: 15px;
     font-weight: 200;
 }
 
 .temperature {
     margin-top: 15px;
-    font-weight: 100;
     letter-spacing: -0.3rem;
     font-size: 5rem;
 }

@@ -6,9 +6,9 @@ class App extends Component {
     super()
     this.state = {
       country: '',
+      data: {},
       currentTemperature: 0,
       currentUnit: 'C',
-      availableUnit: 'F'
     }
   }
 
@@ -16,6 +16,14 @@ class App extends Component {
    evt.preventDefault();
    var userLocation = this.state.country;
    console.log(userLocation);
+   fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${userLocation}&appid=7e07c7c24f9992939cb8c23a3155f4ae&units=metric`)
+  .then(response => response.json())
+   .then((data) => {
+     console.log(data)
+     this.setState({
+      data: data
+     })
+   })
 
  };
 
@@ -39,22 +47,30 @@ class App extends Component {
     this.setState({ content: this.state.country })
   };
 
-  render() {
+  render(){
+  var currentTemp = 'Loading...';
+    if (this.state.data.list) {
+      currentTemp = this.state.data.list[0].main.temp;
+    }
     return (
       <div className="main-wrapper overlay">
         <div className="forecast-box">
+          <h1 className="banner">Weather App</h1>
             <form onSubmit={this.fetchUserLocation.bind(this)}>
               <input
+              placeholder="Enter City,Country"
               className="textbar"
               type="text"
               onChange={this.userInput.bind(this)}
               />
               <h1 className="city-name">{this.state.city}</h1>
               <h2 className="country">{this.state.country}</h2>
-              <h3 className="temperature">&#176;{this.state.currentUnit} <span className="super-small">/ {this.state.availableUnit}</span></h3>
-              <h2>{this.userInput.bind(this)}</h2>
             </form>
-
+            <p className="temp-wrapper">
+              <h3 className="temperature">{ currentTemp }
+                <span className="temperature">&#176;{this.state.currentUnit}</span>
+              </h3>
+            </p>
         </div>
       </div>
     );
