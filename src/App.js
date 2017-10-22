@@ -16,7 +16,7 @@ class App extends Component {
    evt.preventDefault();
    var userLocation = this.state.country;
    console.log(userLocation);
-   fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${userLocation}&appid=7e07c7c24f9992939cb8c23a3155f4ae&units=metric`)
+   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${userLocation}&appid=7e07c7c24f9992939cb8c23a3155f4ae&units=metric`)
   .then(response => response.json())
    .then((data) => {
      console.log(data)
