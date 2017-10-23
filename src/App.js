@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-class App extends Component {
 
+class App extends Component {
   constructor() {
     super()
     this.state = {
@@ -12,20 +12,21 @@ class App extends Component {
     }
   }
 
+  // stores the current state of country in a variable, and the variable is used to query
+  // response is then converted into JSON and then set the object as a data state
   fetchUserLocation = (evt) => {
-   evt.preventDefault();
-   var userLocation = this.state.country;
-   console.log(userLocation);
-   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${userLocation}&appid=7e07c7c24f9992939cb8c23a3155f4ae&units=metric`)
-  .then(response => response.json())
-   .then((data) => {
-     console.log(data)
-     this.setState({
-      data: data
+    evt.preventDefault();
+    var userLocation = this.state.country;
+    console.log(userLocation);
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${userLocation}&appid=7e07c7c24f9992939cb8c23a3155f4ae&units=metric`)
+    .then(response => response.json())
+    .then((data) => {
+       console.log(data)
+       this.setState({
+        data: data
+       })
      })
-   })
-
- };
+  };
 
   // store user input for location
   userInput = (evt) => {
@@ -34,21 +35,8 @@ class App extends Component {
      });
   };
 
-  enterKeypressed(event) {
-    if (event.key === 'Enter') {
-      this.setState({
-        country: ''
-      });
-    }
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({ content: this.state.country })
-  };
-
   render(){
-  var currentTemp = 'Loading...';
+    let currentTemp = 'Loading...';
     if (this.state.data.list) {
       currentTemp = this.state.data.list[0].main.temp;
     }
@@ -76,5 +64,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
