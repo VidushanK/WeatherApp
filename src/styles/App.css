@@ -40,6 +40,10 @@ html {
     border-radius: 50px;
     border: solid black;
 }
+.forecast-box:hover {
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+  transform: translate3D(0, -2px, 0);
+}
 
 .city-name {
     font-family: Helvetica, Arial, sans-serif;
